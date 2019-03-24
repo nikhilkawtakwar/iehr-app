@@ -22,9 +22,7 @@ public class CORSConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
 
     http.requestMatchers()
-            .antMatchers(HttpMethod.OPTIONS, "/oauth/token", "/api/**", "/jsnlog.logger")
-            .and().requestMatchers()
-            .antMatchers(HttpMethod.POST, "/jsnlog.logger")
+            .antMatchers(HttpMethod.OPTIONS, "/oauth/token", "/**/*")
             .and().requestMatchers()
             .antMatchers(HttpMethod.GET, "/health", "/health.json", "/info", "/info.json", "/metrics", "/metrics.json", "/upload/**")
             .and().csrf()
